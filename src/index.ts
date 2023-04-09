@@ -79,7 +79,8 @@ function draw() {
   terminal.write(`Score: ${game.score} - Max Score: ${game.maxScore}`, 1, 0);
 
   const { x, y } = snake.move();
-  if (snake.willColide()) {
+
+  if (snake.willColide() || colideSelf()) {
     gameOver();
     return;
   }
@@ -105,6 +106,17 @@ function draw() {
       2
     );
   }
+}
+
+function colideSelf() {
+  const colide =
+    snakeSprite.length > 1 &&
+    snakeSprite.some(
+      (sprite) => sprite.y === snake.position.y && sprite.x === snake.position.x
+    );
+
+  if (colide) terminal.write("colide", 10, 10);
+  return colide;
 }
 
 function centerOfTheBox(x: number, len: number, width: number) {
@@ -146,7 +158,7 @@ function gameOver() {
 
 function loop() {
   draw();
-  timeout = setTimeout(loop, 1000 / (8 + Math.floor(game.score / 10)));
+  timeout = setTimeout(loop, 1000 / (8 + Math.floor(game.score / 5)));
 }
 
 function handleControls({ name }: { name: string }) {
