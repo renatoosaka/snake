@@ -8,6 +8,20 @@
     "build": "tsc",
     "start:dev": "tsx ./src/index.ts"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/renatoosaka/snake.git"
+  },
+  "keywords": [
+    "game",
+    "terminal",
+    "snake"
+  ],
+  "author": "Renato Hideki Osaka",
+  "files": [
+    "dist/**/*"
+  ],
+  "types": "./dist/index.d.ts",
   "devDependencies": {
     "@types/node": "^18.15.11",
     "ts-node": "^10.9.1",
