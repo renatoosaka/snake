@@ -1,0 +1,20 @@
+{
+  "name": "osaka-snake",
+  "version": "1.0.0",
+  "main": "./dist/index.js",
+  "bin": "./dist/index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc",
+    "start:dev": "tsx ./src/index.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^18.15.11",
+    "ts-node": "^10.9.1",
+    "tsx": "^3.12.6",
+    "typescript": "^5.0.4"
+  },
+  "dependencies": {
+    "command-line-draw": "^1.2.3"
+  }
+}
