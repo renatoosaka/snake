@@ -146,7 +146,7 @@ function gameOver() {
 
 function loop() {
   draw();
-  timeout = setTimeout(loop, 1000 / 8);
+  timeout = setTimeout(loop, 1000 / (8 + Math.floor(game.score / 10)));
 }
 
 function handleControls({ name }: { name: string }) {
